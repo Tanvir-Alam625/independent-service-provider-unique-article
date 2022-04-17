@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "BATTLE DRIVER",
+    "description": "The reader's choices determine the outcome of the Autobots' efforts to defeat the deadly plots of the Decepticons",
+    "img": "../src/images/service/battle-driver.jpg",
+    "price": 10
+  },
+  {
+    "id": 2,
+    "name": "EMILY HENRY  BOOK LOVERS",
+    "description": "Nora Stephens’ life is books—she’s read them all—and she is not that type of heroine. Not the plucky one, not the laidback dream girl, and especially not the sweetheart. In fact, the only people Nora is a heroine for are her clients, for whom she lands enormous deals as a cutthroat literary agent, and her beloved",
+    "img": "../src/images/service/emily-books.jpg",
+    "price": 13
+  }
+]
