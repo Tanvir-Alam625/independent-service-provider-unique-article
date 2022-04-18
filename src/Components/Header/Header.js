@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 import Logo from "../../images/logo/logo.png";
 import CustomLink from "../CustomLink/CustomLink";
 import { MenuAlt4Icon } from "@heroicons/react/solid";
+import auth from "../../firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
 const Header = () => {
   const [toggle, setToggle] = useState(false);
-  console.log(toggle);
+  const [user, loading, error] = useAuthState(auth);
   return (
     <header>
       <nav className=" bg-gray-100 flex justify-between px-3 md:px-[40px]  lg:px-[100px]  py-2 items-center">
@@ -20,7 +23,7 @@ const Header = () => {
             toggle ? "left-[0px]" : "left-[-100%]"
           }`}
         >
-          <ul className="flex flex-col items-start lg:flex-row ">
+          <ul className="flex flex-col items-start lg:flex-row  lg:items-center">
             <CustomLink to="/">
               <li
                 className="text-xl ml-2 lg:ml-8 font-mono"
@@ -53,14 +56,23 @@ const Header = () => {
                 Blogs
               </li>
             </CustomLink>
-            <CustomLink to="/login">
-              <li
-                className="text-xl ml-2 lg:ml-8 font-mono"
-                onClick={() => setToggle(!toggle)}
+            {user ? (
+              <button
+                onClick={() => signOut(auth)}
+                className="text-xl font-semibold py-1 px-4 border-2 mx-2 rounded "
               >
-                Login
-              </li>
-            </CustomLink>
+                SignOut
+              </button>
+            ) : (
+              <CustomLink to="/login">
+                <li
+                  className="text-xl ml-2 lg:ml-8 font-mono"
+                  onClick={() => setToggle(!toggle)}
+                >
+                  Login
+                </li>
+              </CustomLink>
+            )}
           </ul>
         </div>
         <MenuAlt4Icon

@@ -6,6 +6,7 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import "./Login.css";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -28,6 +29,13 @@ const Login = () => {
     signInWithEmailAndPassword(email, password);
     console.log(email, password);
   };
+  if (loadingGoogle) {
+    return (
+      <div className="min-h-screen w-full bg-slate-500">
+        <div class="lds-dual-ring"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="px-2 md:px-[60px] lg:px-[100px] my-28 flex  flex-col justify-center items-center">
@@ -70,10 +78,11 @@ const Login = () => {
           </p>
           <div className="btn w-full ">
             <button
+              disabled={loading ? true : false}
               type="submit"
               className=" py-4 w-full text-xl text-gray-50 font-semibold rounded-md  bg-[#8046B7]  hover:bg-[#ae6cec] duration-300 ease-in"
             >
-              Login
+              {loading ? <div class="lds-dual-ring"></div> : <span>Login</span>}
             </button>
           </div>
         </form>

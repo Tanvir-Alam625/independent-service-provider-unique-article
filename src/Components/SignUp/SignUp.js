@@ -6,6 +6,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import google from "../../images/social/google.png";
+import "../Login/Login.css";
 const SignUp = () => {
   const [condition, setCondition] = useState(false);
   const navigate = useNavigate();
@@ -96,13 +97,17 @@ const SignUp = () => {
           </p>
           <div className="btn w-full ">
             <button
-              disabled={!condition}
+              disabled={loading || !condition ? true : false}
               type="submit"
               className={` py-4 w-full text-xl text-gray-50 font-semibold rounded-md     duration-300 ease-in ${
                 condition ? "bg-[#8046B7] hover:bg-[#ae6cec]" : "bg-gray-400"
               }`}
             >
-              SignUp
+              {loading ? (
+                <div class="lds-dual-ring"></div>
+              ) : (
+                <span>SignUp</span>
+              )}
             </button>
           </div>
         </form>
