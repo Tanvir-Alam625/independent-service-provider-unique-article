@@ -1,0 +1,6 @@
+.subscribe{
+    height: 500px ;
+    width: 100%;
+    background-image: linear-gradient(rgba(60, 9, 70, 0.499),rgb(41, 20, 65,0.3) ),url('../../../images/subscribe/kaitlyn-baker-vZJdYl5JVXY-unsplash.jpg');
+    background-size: cover;
+}

@@ -1,7 +1,5 @@
 import React from "react";
-import { Carousel } from "react-bootstrap";
-import Banner from "../../images/banner/section-1-image.png";
-import "./Slider.css";
+import Banner from "../../../images/banner/section-1-image.png";
 const Slider = () => {
   return (
     <div className="slider flex flex-col lg:flex-row items-center  px-2 md:px-[60px] lg:px-[100px] w-full py-16">
@@ -20,7 +18,7 @@ const Slider = () => {
           the major points that you set out to before you started writing.
         </p>
         <div className="slider-btn">
-          <button className="px-8 py-2 bg-[#8046B7] text-white text-xl mr-3 rounded">
+          <button className="px-8 py-2 bg-[#8046B7] hover:bg-[#ae6cec] duration-300 ease-in text-white text-xl mr-3 rounded">
             Learn More
           </button>
           <button className="px-8 py-2  border-2 rounded text-xl text-gray-600">

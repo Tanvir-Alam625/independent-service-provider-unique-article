@@ -3,42 +3,42 @@
     "id": 1,
     "name": "BATTLE DRIVER",
     "description": "The reader's choices determine the outcome of the Autobots' efforts to defeat the deadly plots of the Decepticons",
-    "img": "../src/images/service/battle-driver.jpg",
+    "img": "https://thumbs2.imgbox.com/a7/ed/ObdmZVfE_t.jpg",
     "price": 10
   },
   {
     "id": 2,
     "name": "EMILY HENRY  BOOK LOVERS",
     "description": "Nora Stephens’ life is books—she’s read them all—and she is not that type of heroine. Not the plucky one, not the laidback dream girl, and especially not the sweetheart. In fact, the only people Nora is a heroine for are her clients, for whom she lands enormous deals as a cutthroat literary agent, and her beloved",
-    "img": "../src/images/service/emily-books.jpg",
+    "img": "https://thumbs2.imgbox.com/36/24/e1Eev3P8_t.jpg",
     "price": 13
   },
   {
     "id": 3,
     "name": "THE ULTIMATE NEGOTIATION ",
     "description": "ULTIMATE books are for managers, leaders, and business executives who want to succeed at work. From marketing and sales to management and finance, each title gives comprehensive coverage of the essential business skills you need to get ahead in your career. Written in straightforward English, each book is designed to help you quickly master the subject, with fun quizzes embedded so that you can check how you're doing.",
-    "img": "../src/images/service/negotiation.jpg",
+    "img": "https://thumbs2.imgbox.com/37/ee/JqAgbwV5_t.jpg",
     "price": 7
   },
   {
     "id": 4,
     "name": "ROBYN CARR THE WANDERER",
     "description": "Blake Smiley searched the country for just the right place to call home. The professional triathlete has traveled the world, but Thunder Point has what he needs to put down the roots he’s never had. In the quiet town, he can focus on his training without distractions. Until he meets his new neighbors and everything changes.",
-    "img": "../src/images/service/robyn-carr.jpg",
+    "img": "https://thumbs2.imgbox.com/52/7d/1LZN13Vn_t.jpg",
     "price": 7
   },
   {
     "id": 5,
     "name": "ROBYN CARR ON WISH",
     "description": "Blake Smiley searched the country for just the right place to call home. The professional triathlete has traveled the world, but Thunder Point has what he needs to put down the roots he’s never had. In the quiet town, he can focus on his training without distractions. Until he meets his new neighbors and everything changes.",
-    "img": "../src/images/service/robyn-carr.jpg",
+    "img": "https://thumbs2.imgbox.com/2c/a0/9szqN1CT_t.jpg",
     "price": 15
   },
   {
     "id": 6,
     "name": "TANGOTIPS BY THE MAESTROS",
     "description": "Tangofulness is tailored for readers who are looking for greater connection in tango.Simple, straightforward, and funny, this book will help you decipher connection, awareness, and meaning in tango. This argentine tango book is currently available in English, Spanish, Portuguese, Italian, Russian, Turkish, Hungarian. The German, French, Greek, Finnish, Dutch, etc. translations will be released soon.",
-    "img": "../src/images/service/Tango-Tips-by-the-Maestros.webp",
+    "img": "https://thumbs2.imgbox.com/a7/7c/sBWovnKN_t.jpg",
     "price": 17
   }
 ]
