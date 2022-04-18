@@ -7,6 +7,7 @@ import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
+import Reset from "./Components/Login/Reset";
 import NotFound from "./Components/NotFound/NotFound";
 import Services from "./Components/Services/Services";
 import SignUp from "./Components/SignUp/SignUp";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/about" element={<AboutMe />} />
+        <Route path="/reset" element={<Reset />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

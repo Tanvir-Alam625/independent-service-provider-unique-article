@@ -1,16 +1,41 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import google from "../../images/social/google.png";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] =
+    useSignInWithGoogle(auth);
+
+  if (user || userGoogle) {
+    navigate("/home");
+  }
+  if (error) {
+    console.log(error);
+  }
+  //form submit function
+  const handleLoginForm = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    signInWithEmailAndPassword(email, password);
+    console.log(email, password);
+  };
+
   return (
     <div className="px-2 md:px-[60px] lg:px-[100px] my-28 flex  flex-col justify-center items-center">
       <h2 className="text-2xl  my-6 lg:text-5xl font-bold text-[#8046B7] font-mono">
         Login With Unique Article
       </h2>
       <div className="form-container  w-full md:w-2/3 mt-6 shadow p-4 bg-gray-50">
-        <form>
+        <form onSubmit={handleLoginForm}>
           <div className=" my-6 user-name flex flex-col items-center md:items-start w-full">
             <label htmlFor="email" className="text-xl text-gray-600 text-left">
               Email
@@ -34,10 +59,15 @@ const Login = () => {
               type="password"
               name="password"
               id="password"
+              min="8"
               required
               className="py-2 px-2 border-2 rounded-md w-full outline-0 shadow  text-xl text-gray-600"
             />
           </div>
+          <p className="text-red-500">
+            {error?.message}
+            {errorGoogle?.message}
+          </p>
           <div className="btn w-full ">
             <button
               type="submit"
@@ -47,16 +77,28 @@ const Login = () => {
             </button>
           </div>
         </form>
-        <p className="text-sm my-6 text-gray-600  capitalize text-left font-semibold">
-          new to Unique Article?{" "}
-          <span
-            onClick={() => navigate("/signup")}
-            className="text-[#8046B7] hover:underline cursor-pointer"
+        <div className="others flex justify-between items-center">
+          <p className="text-sm my-6 text-gray-600  capitalize text-left font-semibold">
+            new to Unique Article?{" "}
+            <span
+              onClick={() => navigate("/signup")}
+              className="text-[#8046B7] hover:underline cursor-pointer"
+            >
+              SignUp
+            </span>
+          </p>
+          <button
+            className="text-xl my-4 text-gray-600 hover:text-[#8046B7]"
+            onClick={() => navigate("/reset")}
           >
-            SignUp
-          </span>
-        </p>
-        <button className="flex w-full bg-white py-2 justify-center items-center border-2 text-xl text-gray-600  rounded-md">
+            Reset Password
+          </button>
+        </div>
+
+        <button
+          onClick={() => signInWithGoogle()}
+          className="flex w-full bg-white py-2 justify-center items-center border-2 text-xl text-gray-600  rounded-md"
+        >
           <img src={google} alt="googleIcon" className="mr-4 w-12" />
           <p>Sign Up With Google</p>
         </button>
