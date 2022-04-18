@@ -8,7 +8,7 @@ const Header = () => {
   console.log(toggle);
   return (
     <header>
-      <nav className=" bg-gray-200 flex justify-between px-3 md:px-[40px]  lg:px-[100px]  py-2 items-center">
+      <nav className=" bg-gray-100 flex justify-between px-3 md:px-[40px]  lg:px-[100px]  py-2 items-center">
         <Link to="/">
           <div className="nav-logo flex items-end  text-[#8046B7] font-semibold font-mono tracking-tighter cursor-pointer">
             <img src={Logo} alt="nav-logo" className="w-8 md:w-12" />
@@ -16,7 +16,7 @@ const Header = () => {
           </div>
         </Link>
         <div
-          className={` absolute top-[45px] md:top-[60px] w-full lg:w-auto bg-gray-200  py-6 px-3 lg:p-0 lg:static lg:mt-0 duration-300 ease-in z-30 ${
+          className={` absolute top-[45px] md:top-[60px] w-full lg:w-auto bg-gray-100  py-6 px-3 lg:p-0 lg:static lg:mt-0 duration-300 ease-in z-30 ${
             toggle ? "left-[0px]" : "left-[-100%]"
           }`}
         >
