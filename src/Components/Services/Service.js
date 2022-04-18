@@ -1,8 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import ser from "../../images/service/battle-driver.jpg";
 const Service = ({ data }) => {
   const { img, name, description, price } = data;
-  console.log(img);
+  const navigate = useNavigate();
   return (
     <div className=" border-2 rounded-md shadow-lg  ">
       <div className="img">
@@ -24,7 +25,10 @@ const Service = ({ data }) => {
           <span> ${price}</span>
         </p>
         <div className="btn  absolute bottom-6">
-          <button className="px-8 py-2 text-left bg-[#8046B7] hover:bg-[#ae6cec] duration-300 ease-in text-white text-xl rounded">
+          <button
+            onClick={() => navigate("/checkout")}
+            className="px-8 py-2 text-left bg-[#8046B7] hover:bg-[#ae6cec] duration-300 ease-in text-white text-xl rounded"
+          >
             Buy Now
           </button>
         </div>
