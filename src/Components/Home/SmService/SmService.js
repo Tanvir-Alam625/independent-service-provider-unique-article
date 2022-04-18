@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Service from "../../Services/Service";
-
+import { useNavigate } from "react-router-dom";
 const SmService = () => {
   const [services, setServices] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     fetch("service.json")
       .then((res) => res.json())
@@ -22,6 +23,12 @@ const SmService = () => {
           <Service key={service.id} data={service} />
         ))}
       </div>
+      <button
+        onClick={() => navigate("/services")}
+        className="my-6 text-center py-2 border rounded-md px-8 text-[#8046B7] font-semibold"
+      >
+        View More
+      </button>
     </section>
   );
 };
