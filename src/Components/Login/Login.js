@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import google from "../../images/social/google.png";
 import {
   useSignInWithEmailAndPassword,
@@ -14,9 +14,12 @@ const Login = () => {
     useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] =
     useSignInWithGoogle(auth);
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
+  //navigate
   if (user || userGoogle) {
-    navigate("/home");
+    navigate(from, { replace: true });
   }
   if (error) {
     console.log(error);
@@ -44,7 +47,7 @@ const Login = () => {
       </h2>
       <div className="form-container  w-full md:w-2/3 mt-6 shadow p-4 bg-gray-50">
         <form onSubmit={handleLoginForm}>
-          <div className=" my-6 user-name flex flex-col items-center md:items-start w-full">
+          <div className=" my-6 user-name w-full items-center flex flex-col  md:items-start ">
             <label htmlFor="email" className="text-xl text-gray-600 text-left">
               Email
             </label>
@@ -56,7 +59,7 @@ const Login = () => {
               className="py-2 px-2 border-2 rounded-md w-full outline-0 shadow  text-xl text-gray-600"
             />
           </div>
-          <div className="password my-6 flex flex-col items-center md:items-start w-full">
+          <div className="password my-6 flex flex-col items-center md:items-start w-full ">
             <label
               htmlFor="password"
               className="text-xl text-gray-600 text-left"

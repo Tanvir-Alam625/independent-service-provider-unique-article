@@ -3,7 +3,7 @@ import {
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import google from "../../images/social/google.png";
 import "../Login/Login.css";
@@ -14,10 +14,12 @@ const SignUp = () => {
     useCreateUserWithEmailAndPassword(auth);
   const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] =
     useSignInWithGoogle(auth);
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   //navigate
   if (user || userGoogle) {
-    navigate("/home");
+    navigate(from, { replace: true });
   }
   //form submit function
   const handleSignUpForm = (event) => {
