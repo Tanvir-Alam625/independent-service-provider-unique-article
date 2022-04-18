@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="footer-logo">
           <div className="nav-logo flex items-end  text-[#8046B7] font-semibold font-mono tracking-tighter cursor-pointer">
             <img src={logo} alt="logo" className="w-8 md:w-12" />
-            <h2 className="mb-0">Unique Content</h2>
+            <h2 className="mb-0">Unique Article</h2>
           </div>
           <p className="text-left text-sm text-gray-600 font-mono my-6">
             You must have extensive knowledge on the topic you’re writing about,

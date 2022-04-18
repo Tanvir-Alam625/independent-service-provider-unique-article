@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import ser from "../../images/service/battle-driver.jpg";
 const Service = ({ data }) => {
   const { img, name, description, price } = data;
   const navigate = useNavigate();

@@ -12,7 +12,7 @@ const Header = () => {
         <Link to="/">
           <div className="nav-logo flex items-end  text-[#8046B7] font-semibold font-mono tracking-tighter cursor-pointer">
             <img src={Logo} alt="nav-logo" className="w-8 md:w-12" />
-            <h2 className="mb-0">Unique Content</h2>
+            <h2 className="mb-0">Unique Article</h2>
           </div>
         </Link>
         <div
